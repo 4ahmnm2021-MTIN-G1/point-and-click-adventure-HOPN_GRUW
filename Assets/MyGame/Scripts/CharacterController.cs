@@ -8,6 +8,13 @@ public class CharacterController : MonoBehaviour
     public float speed = 5f;
     public Vector2 target;
 
+    [Header("Scale Managment")]
+    public float characterMinSize;
+    public float characterMaxSize;
+    public float x;
+    public float scaleModifier;
+    public float screenAmount = 0.7f;
+
     void Update()
     {
         // Die Pixelwerte der Maus werden in die Weltposition umgerechnet
@@ -30,6 +37,11 @@ public class CharacterController : MonoBehaviour
             float step = speed * Time.deltaTime; // calculate distance to move
             transform.position = Vector2.MoveTowards(transform.position, target, step); // Wir bewegen unseren Character an die gewünschte Stelle 
         }
+
+        // Die Skalierung des Characters anhand der Position
+        x = Mathf.InverseLerp((Screen.height * screenAmount), 0f, Camera.main.WorldToScreenPoint(transform.position).y);
+        scaleModifier = Mathf.Lerp(characterMinSize, characterMaxSize, x);
+        this.transform.localScale = new Vector3(scaleModifier, scaleModifier);
 
     }
 }
