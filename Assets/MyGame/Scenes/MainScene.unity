@@ -1121,6 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cac5c6599adcf4fb0e95185e96cb65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 84330547}
   commandMenu: {fileID: 1306560252}
   speakText: {fileID: 1601404094}
   commandLineText: {fileID: 639834751}
