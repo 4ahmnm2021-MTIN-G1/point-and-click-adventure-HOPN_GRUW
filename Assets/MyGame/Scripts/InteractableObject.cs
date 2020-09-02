@@ -11,6 +11,7 @@ public class InteractableObject : MonoBehaviour
     void OnMouseOver()
     {
         ui.commandLineText.text = this.gameObject.name;
+        ui.hoverObject = this;
     }
 
     void OnMouseExit()
@@ -33,4 +34,6 @@ public class InteractableObject : MonoBehaviour
 
         return mousePosWorld2D;
     }
+
+    
 }

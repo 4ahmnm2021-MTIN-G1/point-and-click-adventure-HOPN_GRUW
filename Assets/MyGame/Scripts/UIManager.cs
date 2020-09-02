@@ -9,4 +9,12 @@ public class UIManager : MonoBehaviour
     public GameObject commandMenu;
     public Text speakText;
     public Text commandLineText;
+
+    public InteractableObject hoverObject;
+
+    public void InvestigateObject()
+    {
+        speakText.text = hoverObject.investigateText;
+    }
+
 }
