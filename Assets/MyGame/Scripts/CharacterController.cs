@@ -30,6 +30,7 @@ public class CharacterController : MonoBehaviour
 
             // Wir setzen die ZielPosition unseres Characters an die getroffene Stelle
             target = hit.point;
+
         }
 
         if (target.x != 0 && target.y != 0)

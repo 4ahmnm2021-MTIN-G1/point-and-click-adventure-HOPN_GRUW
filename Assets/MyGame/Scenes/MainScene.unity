@@ -1264,7 +1264,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-<<<<<<< HEAD
       - m_Target: {fileID: 894958249}
         m_MethodName: SetActive
         m_Mode: 6
@@ -1276,8 +1275,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-=======
->>>>>>> 61a3d4a2dd5bb0cd7188a1bdd6daa97e72be9ea9
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!60 &894958253
@@ -1749,9 +1746,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1306560253}
   - {fileID: 1856185977}
   - {fileID: 1707629615}
+  - {fileID: 1306560253}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2135,7 +2132,7 @@ RectTransform:
   - {fileID: 1153052557}
   - {fileID: 651931402}
   m_Father: {fileID: 932683762}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2678,7 +2675,7 @@ RectTransform:
   m_Children:
   - {fileID: 639834750}
   m_Father: {fileID: 932683762}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2751,7 +2748,7 @@ RectTransform:
   m_Children:
   - {fileID: 1601404093}
   m_Father: {fileID: 932683762}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

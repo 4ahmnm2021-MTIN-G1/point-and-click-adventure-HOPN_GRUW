@@ -16,8 +16,9 @@ public class UIManager : MonoBehaviour
 
     public void InvestigateObject()
     {
-        speakText.text = hoverObject.investigateText;
+        speakText.text = activeObject.investigateText;
         commandMenu.gameObject.SetActive(false);
+        CancelInvoke();
         Invoke("ResetSpeakText", 3f);
     }
 
@@ -25,6 +26,7 @@ public class UIManager : MonoBehaviour
     {
         speakText.text = activeObject.useText;
         commandMenu.gameObject.SetActive(false);
+        CancelInvoke();
         Invoke("ResetSpeakText", 3f);
         activeObject.useEvent.Invoke();
     }
