@@ -20,14 +20,18 @@ public class InteractableObject : MonoBehaviour
     void OnMouseExit()
     {
         ui.commandLineText.text = "-----------------";
+        ui.hoverObject = null;
     }
 
     void OnMouseDown()
     {
-        ui.commandMenu.SetActive(true);
-        ui.commandMenu.transform.position = GetMousePos();
-        GetComponent<PolygonCollider2D>().enabled = false;
-        ui.activeObject = this;
+        if (!ui.commandMenu.activeSelf)
+        {
+            ui.commandMenu.SetActive(true);
+            ui.commandMenu.transform.position = GetMousePos();
+            ui.activeObject = this;
+        }
+        
     }
 
     private Vector2 GetMousePos()
