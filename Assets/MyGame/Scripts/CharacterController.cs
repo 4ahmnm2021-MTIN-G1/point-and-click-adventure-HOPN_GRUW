@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CharacterController : MonoBehaviour
 {
     [Header("Movement")]
     public float speed = 5f;
-    public Vector2 target;
-    public PolygonCollider2D moveColider;
+    public Vector3 target;
+    public Collider moveColider;
+    public NavMeshAgent agent;
 
     [Header("Scale Managment")]
     public float characterMinSize;
@@ -26,22 +28,36 @@ public class CharacterController : MonoBehaviour
         // Wenn unsere linke Maustaste gedrückt wird
         if (Input.GetMouseButtonDown(0))
         {
-            // Wir machen den Raycast in die Szene an der Stelle wo unsere Maus sich befindet
-            var hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (hit.collider == moveColider)
+            RaycastHit hit;
+
+            // Wir machen den Raycast in die Szene an der Stelle wo unsere Maus sich befindet
+            if (Physics.Raycast(ray, out hit))
             {
-                // Wir setzen die ZielPosition unseres Characters an die getroffene Stelle
-                target = hit.point;
+                Debug.Log(hit.collider.gameObject.name);
+                //target = hit.point;
+                agent.SetDestination(hit.point);
+
+                if (hit.collider == moveColider)
+                {
+                    // Wir setzen die ZielPosition unseres Characters an die getroffene Stelle
+                    
+                }
             }
+            
+
+
 
         }
 
+        /*
         if (target.x != 0 && target.y != 0)
         {
             float step = speed * Time.deltaTime; // calculate distance to move
-            transform.position = Vector2.MoveTowards(transform.position, target, step); // Wir bewegen unseren Character an die gewünschte Stelle 
+            transform.position = Vector3.MoveTowards(transform.position, target, step); // Wir bewegen unseren Character an die gewünschte Stelle 
         }
+        */
 
         // Die Skalierung des Characters anhand der Position
         x = Mathf.InverseLerp((Screen.height * screenAmount), 0f, Camera.main.WorldToScreenPoint(transform.position).y);
