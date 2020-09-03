@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public void InvestigateObject()
     {
         speakText.text = hoverObject.investigateText;
+        commandMenu.gameObject.SetActive(false);
     }
 
 }
