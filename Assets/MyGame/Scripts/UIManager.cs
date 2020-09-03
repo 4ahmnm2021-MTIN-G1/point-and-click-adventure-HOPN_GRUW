@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public Text commandLineText;
 
     public InteractableObject hoverObject;
+    public InteractableObject activeObject;
+
 
     public void InvestigateObject()
     {
@@ -18,6 +20,15 @@ public class UIManager : MonoBehaviour
         commandMenu.gameObject.SetActive(false);
         Invoke("ResetSpeakText", 3f);
         hoverObject.GetComponent<PolygonCollider2D>().enabled = true;
+    }
+
+    public void UseObject()
+    {
+        speakText.text = hoverObject.useText;
+        commandMenu.gameObject.SetActive(false);
+        Invoke("ResetSpeakText", 3f);
+        hoverObject.GetComponent<PolygonCollider2D>().enabled = true;
+        activeObject.useEvent.Invoke();
     }
 
     public void ResetSpeakText()

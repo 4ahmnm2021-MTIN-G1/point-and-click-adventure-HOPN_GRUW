@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractableObject : MonoBehaviour
 {
     public UIManager ui;
     public string investigateText;
+    public string useText;
+    public UnityEvent useEvent;
 
 
     void OnMouseOver()
@@ -24,6 +27,7 @@ public class InteractableObject : MonoBehaviour
         ui.commandMenu.SetActive(true);
         ui.commandMenu.transform.position = GetMousePos();
         GetComponent<PolygonCollider2D>().enabled = false;
+        ui.activeObject = this;
     }
 
     private Vector2 GetMousePos()
