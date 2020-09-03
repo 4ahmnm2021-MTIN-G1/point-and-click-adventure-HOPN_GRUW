@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {x: 0, y: 0}
+  moveColider: {fileID: 318581496}
   characterMinSize: 0.3
   characterMaxSize: 1
   x: 0

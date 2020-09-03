@@ -7,6 +7,7 @@ public class CharacterController : MonoBehaviour
     [Header("Movement")]
     public float speed = 5f;
     public Vector2 target;
+    public PolygonCollider2D moveColider;
 
     [Header("Scale Managment")]
     public float characterMinSize;
@@ -28,8 +29,11 @@ public class CharacterController : MonoBehaviour
             // Wir machen den Raycast in die Szene an der Stelle wo unsere Maus sich befindet
             var hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
 
-            // Wir setzen die ZielPosition unseres Characters an die getroffene Stelle
-            target = hit.point;
+            if (hit.collider == moveColider)
+            {
+                // Wir setzen die ZielPosition unseres Characters an die getroffene Stelle
+                target = hit.point;
+            }
 
         }
 
