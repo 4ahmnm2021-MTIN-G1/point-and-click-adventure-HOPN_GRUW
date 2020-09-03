@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
         speakText.text = hoverObject.investigateText;
         commandMenu.gameObject.SetActive(false);
         Invoke("ResetSpeakText", 3f);
+        hoverObject.GetComponent<PolygonCollider2D>().enabled = true;
     }
 
     public void ResetSpeakText()

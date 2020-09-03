@@ -23,6 +23,7 @@ public class InteractableObject : MonoBehaviour
     {
         ui.commandMenu.SetActive(true);
         ui.commandMenu.transform.position = GetMousePos();
+        GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     private Vector2 GetMousePos()
