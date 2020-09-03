@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
+  interactionDistance: 7
   investigateText: What a beautiful view outside.
   useText: 'Let s let some fresh air in. '
   useEvent:
@@ -1067,6 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
+  interactionDistance: 5
   investigateText: I see some kind of microbiological ecosystem in here, interesting.
   useText: Not now.
   useEvent:
@@ -1281,6 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
+  interactionDistance: 10
   investigateText: I wonder what fungus grows in here.
   useText: Let s have a look inside.
   useEvent:
@@ -1808,6 +1811,7 @@ MonoBehaviour:
   commandLineText: {fileID: 639834751}
   hoverObject: {fileID: 0}
   activeObject: {fileID: 0}
+  distance: 0
 --- !u!1 &979580290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,6 +2423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
+  interactionDistance: 5
   investigateText: I see some plastic in here.
   useText: Not now.
   useEvent:
@@ -2996,6 +3001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
+  interactionDistance: 5
   investigateText: This is a sink!
   useText: Not sure why i should wash my hands.
   useEvent:
@@ -3200,6 +3206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
+  interactionDistance: 5
   investigateText: Let s see what i can find.
   useText: Not now.
   useEvent:

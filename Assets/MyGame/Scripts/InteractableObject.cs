@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class InteractableObject : MonoBehaviour
 {
     public UIManager ui;
+    public float interactionDistance = 5f;
     public string investigateText;
     public string useText;
     public UnityEvent useEvent;
