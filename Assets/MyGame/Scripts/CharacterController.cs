@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class CharacterController : MonoBehaviour
     public float x;
     public float scaleModifier;
     public float screenAmount = 0.7f;
+    public Transform scaleSprite;
+
+    [Header("Sorting")]
+    public SpriteRenderer sr;
 
     void Update()
     {
@@ -35,7 +40,7 @@ public class CharacterController : MonoBehaviour
             // Wir machen den Raycast in die Szene an der Stelle wo unsere Maus sich befindet
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.collider.gameObject.name);
+                //Debug.Log(hit.collider.gameObject.name);
                 //target = hit.point;
                 agent.SetDestination(hit.point);
 
@@ -64,5 +69,34 @@ public class CharacterController : MonoBehaviour
         scaleModifier = Mathf.Lerp(characterMinSize, characterMaxSize, x);
         this.transform.localScale = new Vector3(scaleModifier, scaleModifier);
 
+        // Die Platzierung des Characters im Sorting
+        RaycastHit rayHit;
+
+        if (Physics.Raycast(agent.transform.position, Vector3.down, out rayHit))
+        {
+            switch (rayHit.collider.name)
+            {
+                case "Layer1":
+                    sr.sortingOrder = 3;
+                    Debug.Log("Layer1");
+                    break;
+                case "Layer2":
+                    sr.sortingOrder = 2;
+                    Debug.Log("Layer2");
+                    break;
+                case "Layer3":
+                    sr.sortingOrder = 1;
+                    Debug.Log("Layer3");
+                    break;
+                case "Layer4":
+                    sr.sortingOrder = 0;
+                    Debug.Log("Layer4");
+                    break;
+                default:
+                    sr.sortingOrder = 4;
+                    break;
+            }
+            
+        }
     }
 }
