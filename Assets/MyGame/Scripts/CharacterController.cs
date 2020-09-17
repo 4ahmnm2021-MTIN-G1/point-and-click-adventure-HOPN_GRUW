@@ -11,6 +11,7 @@ public class CharacterController : MonoBehaviour
     public Vector3 target;
     public Collider moveColider;
     public NavMeshAgent agent;
+    public Vector3 velocity;
 
     [Header("Scale Managment")]
     public float characterMinSize;
@@ -25,6 +26,11 @@ public class CharacterController : MonoBehaviour
 
     [Header("Other")]
     public UIManager ui;
+
+    public Sprite front;
+    public Sprite back;
+    public Sprite left;
+    public Sprite right;
 
     void Update()
     {
@@ -59,13 +65,35 @@ public class CharacterController : MonoBehaviour
 
         }
 
-        /*
-        if (target.x != 0 && target.y != 0)
+        #region display sprite
+        // Richtige Darstellung der Sprites
+        velocity = agent.velocity;
+        // Wenn sie nach vorne geht
+        if (agent.velocity.z < 0 && (Mathf.Abs(agent.velocity.x) < Mathf.Abs(agent.velocity.z)))
         {
-            float step = speed * Time.deltaTime; // calculate distance to move
-            transform.position = Vector3.MoveTowards(transform.position, target, step); // Wir bewegen unseren Character an die gewünschte Stelle 
+            sr.sprite = front;
         }
-        */
+        // Wenn sie nach hinten geht
+        else if (agent.velocity.z > 0 && (Mathf.Abs(agent.velocity.x) < Mathf.Abs(agent.velocity.z)))
+        {
+            sr.sprite = back;
+        }
+        // Wenn sie nach rechts geht
+        else if (agent.velocity.x > 0 && (Mathf.Abs(agent.velocity.x) > Mathf.Abs(agent.velocity.z)))
+        {
+            sr.sprite = right;
+        }
+        // Wenn sie nach links geht
+        else if (agent.velocity.x < 0 && (Mathf.Abs(agent.velocity.x) > Mathf.Abs(agent.velocity.z)))
+        {
+            sr.sprite = left;
+        }
+        // Wenn sie stehen bleibt
+        else if (agent.velocity.z == 0)
+        {
+            sr.sprite = front;
+        }
+        #endregion
 
         // Die Skalierung des Characters anhand der Position
         x = Mathf.InverseLerp((Screen.height * screenAmount), 0f, Camera.main.WorldToScreenPoint(transform.position).y);

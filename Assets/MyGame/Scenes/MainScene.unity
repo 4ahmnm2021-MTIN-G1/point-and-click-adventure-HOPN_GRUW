@@ -1865,6 +1865,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   moveColider: {fileID: 0}
   agent: {fileID: 1095616270}
+  velocity: {x: 0, y: 0, z: 0}
   characterMinSize: 0.6
   characterMaxSize: 1.7
   x: 0
@@ -1873,6 +1874,10 @@ MonoBehaviour:
   scaleSprite: {fileID: 1025475343}
   sr: {fileID: 74217938}
   ui: {fileID: 932683763}
+  front: {fileID: 21300000, guid: 6d56dfc39f125474ebd2ce35b7eeef69, type: 3}
+  back: {fileID: 21300000, guid: 8e158190837650b4abad3be384990101, type: 3}
+  left: {fileID: 21300000, guid: 8f6d6604ee77b7a4cb4556ad93323f6f, type: 3}
+  right: {fileID: 21300000, guid: efe6eba881e2cc14396b063dd33d3c10, type: 3}
 --- !u!65 &1095616272
 BoxCollider:
   m_ObjectHideFlags: 0
