@@ -11,9 +11,6 @@ public class InteractableObject : MonoBehaviour
     public string useText;
     public UnityEvent useEvent;
 
-    public Vector3 test;
-
-
     void OnMouseOver()
     {
         ui.commandLineText.text = this.gameObject.name;
@@ -35,8 +32,7 @@ public class InteractableObject : MonoBehaviour
             Vector3 vec = ui.commandMenu.GetComponent<RectTransform>().localPosition;
             ui.commandMenu.GetComponent<RectTransform>().localPosition = new Vector3(vec.x, vec.y, 0f);
             ui.activeObject = this;
-        }
-        
+        } 
     }
 
     private Vector2 GetMousePos()
