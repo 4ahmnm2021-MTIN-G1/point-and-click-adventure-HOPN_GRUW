@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
         else
         {
             speakText.text = "Ich bin nicht nah genug dran";
+            commandMenu.gameObject.SetActive(false);
         }
 
         Invoke("ResetSpeakText", 3f);
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour
         else
         {
             speakText.text = "Ich bin nicht nah genug dran";
+            commandMenu.gameObject.SetActive(false);
         }
 
         Invoke("ResetSpeakText", 3f);

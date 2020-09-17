@@ -23,6 +23,9 @@ public class CharacterController : MonoBehaviour
     [Header("Sorting")]
     public SpriteRenderer sr;
 
+    [Header("Other")]
+    public UIManager ui;
+
     void Update()
     {
         // Die Pixelwerte der Maus werden in die Weltposition umgerechnet
@@ -31,7 +34,7 @@ public class CharacterController : MonoBehaviour
         Vector2 mousePosWorld2D = new Vector2(mousePosWorld.x, mousePosWorld.y);
 
         // Wenn unsere linke Maustaste gedrückt wird
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !ui.commandMenu.activeSelf)
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
