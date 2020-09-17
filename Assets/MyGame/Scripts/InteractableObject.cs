@@ -11,6 +11,8 @@ public class InteractableObject : MonoBehaviour
     public string useText;
     public UnityEvent useEvent;
 
+    public Vector3 test;
+
 
     void OnMouseOver()
     {
@@ -30,6 +32,9 @@ public class InteractableObject : MonoBehaviour
         {
             ui.commandMenu.SetActive(true);
             ui.commandMenu.transform.position = GetMousePos();
+            Vector3 vec = ui.commandMenu.GetComponent<RectTransform>().localPosition;
+            ui.commandMenu.GetComponent<RectTransform>().localPosition = new Vector3(vec.x, vec.y, 0f);
+            //Debug.Log(GetMousePos());
             ui.activeObject = this;
         }
         
@@ -40,9 +45,10 @@ public class InteractableObject : MonoBehaviour
         // Die Pixelwerte der Maus werden in die Weltposition umgerechnet
         Vector3 mousePosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         // Wir ziehen aus der 3D Position die für uns relevanten 2D Werte der X und Y Achse
-        Vector2 mousePosWorld2D = new Vector2(mousePosWorld.x, mousePosWorld.y);
+        Vector3 mousePosWorld3D = new Vector3(mousePosWorld.x, mousePosWorld.y, mousePosWorld.z);
+        Debug.Log(mousePosWorld3D);
 
-        return mousePosWorld2D;
+        return mousePosWorld3D;
     }
 
     

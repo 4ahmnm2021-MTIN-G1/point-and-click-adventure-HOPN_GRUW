@@ -67,7 +67,7 @@ public class CharacterController : MonoBehaviour
         // Die Skalierung des Characters anhand der Position
         x = Mathf.InverseLerp((Screen.height * screenAmount), 0f, Camera.main.WorldToScreenPoint(transform.position).y);
         scaleModifier = Mathf.Lerp(characterMinSize, characterMaxSize, x);
-        this.transform.localScale = new Vector3(scaleModifier, scaleModifier);
+        scaleSprite.transform.localScale = new Vector3(scaleModifier, 1f , scaleModifier);
 
         // Die Platzierung des Characters im Sorting
         RaycastHit rayHit;
