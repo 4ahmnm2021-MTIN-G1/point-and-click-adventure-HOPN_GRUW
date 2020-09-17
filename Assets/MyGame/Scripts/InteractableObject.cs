@@ -7,7 +7,8 @@ public class InteractableObject : MonoBehaviour
 {
     public UIManager ui;
     public float interactionDistance = 5f;
-    public string investigateText;
+    public int investigateTextID = 0;
+    public string[] investigateText;
     public string useText;
     public UnityEvent useEvent;
 

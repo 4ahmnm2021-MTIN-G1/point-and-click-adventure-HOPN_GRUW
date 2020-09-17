@@ -454,7 +454,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
   interactionDistance: 7
-  investigateText: What a beautiful view outside.
+  investigateTextID: 0
+  investigateText:
+  - What a beautiful view outside
   useText: 'Let s let some fresh air in. '
   useEvent:
     m_PersistentCalls:
@@ -1345,7 +1347,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
   interactionDistance: 5
-  investigateText: I see some kind of microbiological ecosystem in here, interesting.
+  investigateTextID: 0
+  investigateText:
+  - hmmm, more biological this one is.
+  - still not tasty.
+  - not even remotely.
   useText: Not now.
   useEvent:
     m_PersistentCalls:
@@ -1480,7 +1486,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
   interactionDistance: 10
-  investigateText: I wonder what fungus grows in here.
+  investigateTextID: 0
+  investigateText:
+  - I wonder what microbiological fungus might grow in here.
   useText: Let s have a look inside.
   useEvent:
     m_PersistentCalls:
@@ -2406,7 +2414,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
   interactionDistance: 5
-  investigateText: I see some plastic in here.
+  investigateTextID: 0
+  investigateText:
+  - some plastic trash in here
+  - and some cans
+  - and some other stuff
   useText: Not now.
   useEvent:
     m_PersistentCalls:
@@ -2924,8 +2936,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
   interactionDistance: 5
-  investigateText: This is a sink!
-  useText: Not sure why i should wash my hands.
+  investigateTextID: 0
+  investigateText:
+  - Not sure why i should wash my hands.
+  - Still not sure
+  - What do you want from me?
+  useText: 
   useEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3065,8 +3081,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 932683763}
   interactionDistance: 5
-  investigateText: Let s see what i can find.
-  useText: Not now.
+  investigateTextID: 0
+  investigateText:
+  - Not now.
+  useText: 
   useEvent:
     m_PersistentCalls:
       m_Calls: []

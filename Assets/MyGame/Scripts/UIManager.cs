@@ -24,7 +24,13 @@ public class UIManager : MonoBehaviour
 
         if (distance < activeObject.interactionDistance)
         {
-            speakText.text = activeObject.investigateText;
+            speakText.text = activeObject.investigateText[activeObject.investigateTextID];
+            // Nur die ID hochsetzen wenn die Laenge des Arrays noch nicht erreicht ist
+            if ((activeObject.investigateTextID + 1) < activeObject.investigateText.Length)
+            {
+                activeObject.investigateTextID += 1;
+            }
+
             commandMenu.gameObject.SetActive(false); 
         }
         else
